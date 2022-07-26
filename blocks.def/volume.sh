@@ -32,9 +32,10 @@ pacmd list-sinks | awk '
     }
     END {
         if (f) {
-            printf "%s", h ? (m ? ICONhm : ICONhn) : (m ? ICONsm : ICONsn)
+            # printf "%s", h ? (m ? ICONhm : ICONhn) : (m ? ICONsm : ICONsn)
+            print "V:"
             if (vb)
-                print vb
+                printf "%s%s", vb, m ? "M" : ""
             else
                 printf "L%s R%s\n", vl, vr
         }
